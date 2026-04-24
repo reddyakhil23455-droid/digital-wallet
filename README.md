@@ -114,7 +114,7 @@ Insufficient balance
 Transaction Failed
 ```
 
-![Insufficient](images/output2.png)
+![Insufficient](images/Insufficient.png)
 ---
 
 ### 3. Invalid User Name
@@ -130,7 +130,7 @@ Amount: 500
 
 Invalid user name
 ```
-![Invalid](images/output3.png)
+![Invalid](images/Invalid.png)
 ---
 
 ### 4. Same Sender and Receiver
@@ -146,7 +146,7 @@ Amount: 500
 
 Sender and receiver cannot be the same
 ```
-![same](images/output4.png)
+![same](images/same.png)
 ---
 
 ### 5. Database Error (if MySQL not running)
