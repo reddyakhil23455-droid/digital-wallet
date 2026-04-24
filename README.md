@@ -91,7 +91,7 @@ Insufficient balance
 Transaction Failed
 ```
 
-![Insufficient](images/insufficient.png)
+![Insufficient](images/Insufficient.png)
 
 ---
 
@@ -101,7 +101,7 @@ Transaction Failed
 Invalid user name
 ```
 
-![Invalid](images/invalid.png)
+![Invalid](images/Invalid.png)
 
 ---
 
