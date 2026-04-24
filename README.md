@@ -84,8 +84,6 @@ java -cp "out;mysql-connector-j-8.0.33.jar" main.MainApp
 ### 1. Successful Transaction
 
 ```
-
-
 Transaction Successful
 ```
 
@@ -97,9 +95,9 @@ Transaction Successful
 
 ```
 
-
 Insufficient balance
 Transaction Failed
+
 ```
 
 ![Insufficient](images/Insufficient.png)
@@ -109,8 +107,8 @@ Transaction Failed
 
 ```
 
-
 Invalid user name
+
 ```
 ![Invalid](images/Invalid.png)
 ---
@@ -119,8 +117,8 @@ Invalid user name
 
 ```
 
-
 Sender and receiver cannot be the same
+
 ```
 ![same](images/same.png)
 ---
