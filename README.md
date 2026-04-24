@@ -1,34 +1,28 @@
-# Digital Wallet System (Java + JDBC)
+# 🚀 Digital Wallet System (Java + JDBC)
 
-## About the Project
-
-This is a console-based digital wallet system built using Java and MySQL.
-
-The goal of this project was to understand how real-world transactions work — especially how money transfer systems ensure consistency using database transactions.
-
-The system allows users to transfer money between accounts while maintaining data integrity using commit and rollback.
+> A console-based wallet system that demonstrates **real-world transaction handling using JDBC (commit & rollback)**.
 
 ---
 
-## Features
+## ✨ Features
 
-* Transfer money between users
-* Check balance before transaction
-* Store transaction history (SUCCESS / FAILED)
-* Rollback if transaction fails
-* Transfer using user names (instead of IDs)
+* 💸 Transfer money between users
+* 🔍 Balance validation before transaction
+* 🔁 Automatic rollback on failure
+* 📊 Transaction logging (SUCCESS / FAILED)
+* 👤 Transfer using user names (instead of IDs)
 
 ---
 
-## Technologies Used
+## 🧱 Tech Stack
 
-* Java (Core Java, OOP concepts)
+* Java (Core Java + OOP)
 * JDBC (Java Database Connectivity)
 * MySQL
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 wallet-system/
@@ -38,30 +32,27 @@ wallet-system/
  │    ├── main/
  │    ├── model/
  ├── database.sql
+ ├── images/
  ├── README.md
- ├── .gitignore
 ```
 
 ---
 
-## How to Run
+## ⚙️ Setup & Run
 
-### 1. Setup Database
+### 1. Create Database
 
-* Open MySQL Workbench
-* Create a database named:
-
-```
-walletdb
+```sql
+CREATE DATABASE walletdb;
 ```
 
-* Run the `database.sql` file
+Run the `database.sql` file.
 
 ---
 
-### 2. Configure Database Connection
+### 2. Configure Database
 
-Open `DBConnection.java` and update:
+Update credentials in `DBConnection.java`:
 
 ```java
 private static final String USER = "root";
@@ -70,51 +61,69 @@ private static final String PASSWORD = "your_password";
 
 ---
 
-### 3. Compile and Run
+### 3. Compile & Run
 
-```
+```bash
 javac -d out src/dao/*.java src/service/*.java src/main/*.java src/model/*.java
 java -cp "out;mysql-connector-j-8.0.33.jar" main.MainApp
 ```
 
 ---
 
-## Sample Outputs
+## 📸 Sample Outputs
 
-### 1. Successful Transaction
+---
 
+### ✅ Successful Transaction
+
+```
+Transaction Successful
+```
 
 ![Success](images/success.png)
 
 ---
 
-### 2. Insufficient Balance
-
-
-![Insufficient](images/Insufficient.png)
----
-
-### 3. Invalid User Name
-
-
-![Invalid](images/Invalid.png)
----
-
-### 4. Same Sender and Receiver
-
-
-![same](images/same.png)
----
-
-### 5. Database Error (if MySQL not running)
+### ❌ Insufficient Balance
 
 ```
-java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/walletdb
+Insufficient balance
+Transaction Failed
+```
+
+![Insufficient](images/insufficient.png)
+
+---
+
+### ⚠️ Invalid User Name
+
+```
+Invalid user name
+```
+
+![Invalid](images/invalid.png)
+
+---
+
+### 🔁 Same Sender & Receiver
+
+```
+Sender and receiver cannot be the same
+```
+
+![Same](images/same.png)
+
+---
+
+### ⚠️ Database Error (MySQL not running)
+
+```
+No suitable driver found for jdbc:mysql://localhost:3306/walletdb
 ```
 
 ---
 
-## Database Tables
+## 🗄️ Database Design
 
 ### users
 
@@ -138,32 +147,31 @@ java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/
 
 ---
 
-## What I Learned
+## 🧠 What This Project Demonstrates
 
-* How JDBC connects Java with MySQL
-* How transactions work using commit and rollback
-* How to structure a project using DAO and service layers
-* Basic backend system design
+* Safe transaction handling using commit & rollback
+* Separation of concerns (DAO vs Service layer)
+* Reliable database interaction using JDBC
 
 ---
 
-## Limitations
+## ⚠️ Limitations
 
-* Console-based (no UI)
+* Console-based application
 * No authentication system
-* Input is case-sensitive
+* Case-sensitive input
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
-* Add login and authentication
-* Display transaction history
-* Convert into REST API using Spring Boot
+* Add authentication system
+* View transaction history
+* Convert to REST API (Spring Boot)
 * Build web interface
 
 ---
 
-## Author
+## 👤 Author
 
-Akhil Reddy
+**Akhil Reddy**
