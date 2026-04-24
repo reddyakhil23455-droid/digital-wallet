@@ -2,37 +2,75 @@
 
 ## About the Project
 
-This is a simple console-based wallet system I built using Java and MySQL.
-The main idea was to understand how transactions work in real systems.
+This is a console-based digital wallet system built using Java and MySQL.
 
-Users can transfer money between accounts, and the system ensures that the transaction is either completed fully or rolled back if something fails.
+The goal of this project was to understand how real-world transactions work — especially how money transfer systems ensure consistency using database transactions.
 
----
-
-## What I implemented
-
-* Money transfer between users
-* Balance checking before transfer
-* Transaction success/failure tracking
-* Rollback using JDBC transactions
-* Database connection using JDBC
+The system allows users to transfer money between accounts while maintaining data integrity using commit and rollback.
 
 ---
 
-## Technologies used
+## Features
 
-* Java (Core Java concepts)
-* JDBC
+* Transfer money between users
+* Check balance before transaction
+* Store transaction history (SUCCESS / FAILED)
+* Rollback if transaction fails
+* Transfer using user names (instead of IDs)
+
+---
+
+## Technologies Used
+
+* Java (Core Java, OOP concepts)
+* JDBC (Java Database Connectivity)
 * MySQL
 
 ---
 
-## How to run the project
+## Project Structure
 
-1. Create a database named `walletdb`
-2. Run the `database.sql` file
-3. Update your MySQL username and password in `DBConnection.java`
-4. Compile and run:
+```
+wallet-system/
+ ├── src/
+ │    ├── dao/
+ │    ├── service/
+ │    ├── main/
+ │    ├── model/
+ ├── database.sql
+ ├── README.md
+ ├── .gitignore
+```
+
+---
+
+## How to Run
+
+### 1. Setup Database
+
+* Open MySQL Workbench
+* Create a database named:
+
+```
+walletdb
+```
+
+* Run the `database.sql` file
+
+---
+
+### 2. Configure Database Connection
+
+Open `DBConnection.java` and update:
+
+```java
+private static final String USER = "root";
+private static final String PASSWORD = "your_password";
+```
+
+---
+
+### 3. Compile and Run
 
 ```
 javac -d out src/dao/*.java src/service/*.java src/main/*.java src/model/*.java
@@ -41,7 +79,9 @@ java -cp "out;mysql-connector-j-8.0.33.jar" main.MainApp
 
 ---
 
-## Sample output
+## Sample Outputs
+
+### 1. Successful Transaction
 
 ```
 1. Transfer Money
@@ -57,25 +97,113 @@ Transaction Successful
 
 ---
 
-## What I learned
+### 2. Insufficient Balance
 
-* How JDBC works with MySQL
-* How to handle transactions (commit & rollback)
-* Importance of separating DAO and service layers
-* Basic backend design structure
+```
+1. Transfer Money
+2. Exit
+Enter choice: 1
+
+Sender Name: akhil
+Receiver Name: ravi
+Amount: 10000
+
+Insufficient balance
+Transaction Failed
+```
+
+---
+
+### 3. Invalid User Name
+
+```
+1. Transfer Money
+2. Exit
+Enter choice: 1
+
+Sender Name: akhil
+Receiver Name: unknown_user
+Amount: 500
+
+Invalid user name
+```
+
+---
+
+### 4. Same Sender and Receiver
+
+```
+1. Transfer Money
+2. Exit
+Enter choice: 1
+
+Sender Name: akhil
+Receiver Name: akhil
+Amount: 500
+
+Sender and receiver cannot be the same
+```
+
+---
+
+### 5. Database Error (if MySQL not running)
+
+```
+java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/walletdb
+```
+
+---
+
+## Database Tables
+
+### users
+
+* user_id (Primary Key)
+* name (Unique)
+* phone
+
+### wallet
+
+* user_id (Primary Key)
+* balance
+
+### transactions
+
+* id (Primary Key)
+* sender_id
+* receiver_id
+* amount
+* status
+* timestamp
+
+---
+
+## What I Learned
+
+* How JDBC connects Java with MySQL
+* How transactions work using commit and rollback
+* How to structure a project using DAO and service layers
+* Basic backend system design
 
 ---
 
 ## Limitations
 
-* No user interface (console only)
-* No login system
+* Console-based (no UI)
+* No authentication system
 * Input is case-sensitive
 
 ---
 
-## Future improvements
+## Future Improvements
 
-* Add user authentication
-* Show transaction history
-* Convert into a web-based application using Spring Boot
+* Add login and authentication
+* Display transaction history
+* Convert into REST API using Spring Boot
+* Build web interface
+
+---
+
+## Author
+
+Akhil Reddy
