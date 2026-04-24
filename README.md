@@ -84,13 +84,7 @@ java -cp "out;mysql-connector-j-8.0.33.jar" main.MainApp
 ### 1. Successful Transaction
 
 ```
-1. Transfer Money
-2. Exit
-Enter choice: 1
 
-Sender Name: akhil
-Receiver Name: ravi
-Amount: 500
 
 Transaction Successful
 ```
@@ -102,13 +96,7 @@ Transaction Successful
 ### 2. Insufficient Balance
 
 ```
-1. Transfer Money
-2. Exit
-Enter choice: 1
 
-Sender Name: akhil
-Receiver Name: ravi
-Amount: 10000
 
 Insufficient balance
 Transaction Failed
@@ -120,13 +108,7 @@ Transaction Failed
 ### 3. Invalid User Name
 
 ```
-1. Transfer Money
-2. Exit
-Enter choice: 1
 
-Sender Name: akhil
-Receiver Name: unknown_user
-Amount: 500
 
 Invalid user name
 ```
@@ -136,13 +118,7 @@ Invalid user name
 ### 4. Same Sender and Receiver
 
 ```
-1. Transfer Money
-2. Exit
-Enter choice: 1
 
-Sender Name: akhil
-Receiver Name: akhil
-Amount: 500
 
 Sender and receiver cannot be the same
 ```
